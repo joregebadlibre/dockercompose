@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "8d2175e3-d159-4e06-b1b0-895f8163b67c",
+		"name": "PRUEBATECNICA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25189169"
+	},
+	"item": [
+		{
+			"name": "Persona/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"personaId\": null,\r\n    \"nombre\": \"Leonardo Alvarez\",\r\n    \"genero\": \"Masculino\",\r\n    \"edad\": 30,\r\n    \"identificacion\": \"21343677\",\r\n    \"direccion\": \"Quito\",\r\n    \"telefono\": \"09877766633\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/personas",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clienteId\": 0,\r\n    \"persona\": {\r\n        \"personaId\": 0,\r\n        \"nombre\": \"jorge\",\r\n        \"genero\": \"Masculino\",\r\n        \"edad\": 9,\r\n        \"identificacion\": \"1717788242\",\r\n        \"direccion\": \"Quito\",\r\n        \"telefono\": \"0999999999\"\r\n    },\r\n    \"contrasena\": \"clave\",\r\n    \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/clientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cuenta/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cuentaId\": null,\r\n  \"cliente\": {\r\n    \"clienteId\": 1\r\n  },\r\n  \"numeroCuenta\": \"123123\",\r\n  \"tipoCuenta\": \"ahorro\",\r\n  \"saldoInicial\": 0.0,\r\n  \"saldoActual\": 0.0,\r\n  \"estado\": \"activo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/cuentas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movimiento/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"movimientoId\": null,\r\n  \"cuenta\": {\r\n    \"cuentaId\": 1\r\n  },\r\n  \"fecha\": \"2024-09-25\",\r\n  \"tipoMovimiento\": \"\",\r\n  \"valor\": 100,\r\n  \"saldo\": 0.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/movimientos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Persona/borrar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/personas/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"personas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MandarMessage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/send?message=papitasllllodfds",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"send"
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "papitasllllodfds"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
